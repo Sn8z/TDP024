@@ -1,0 +1,10 @@
+----------------------------------------------------------------
+Sun Oct 04 15:04:22 CEST 2015:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.8.1.2 - (1095077): instance a816c00e-0150-32f3-fca7-0000061e8a20 
+on database directory memory:/home/sn8z/NetBeansProjects/account-logic-test/dataPU_embedded  with class loader sun.misc.Launcher$AppClassLoader@51d92803 
+Loaded from file:/home/sn8z/NetBeansProjects/lib/derby.jar
+java.vendor=Oracle Corporation
+java.runtime.version=1.7.0_79-b14
+user.dir=/home/sn8z/NetBeansProjects/account-logic-test
+derby.system.home=null
+Database Class Loader started - derby.database.classpath=''

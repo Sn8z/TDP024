@@ -21,14 +21,28 @@ public class AccountLogicFacadeImpl implements AccountLogicFacade {
         String personJSON = httpHelp.get("http://enterprise-systems.appspot.com/person/find.name", "name", person);
         String bankJSON = httpHelp.get("http://enterprise-systems.appspot.com/bank/find.name", "name", bank);
         
+        //Check for input errors and return -1 if that's the case
+        if(personJSON.equals("null")){
+            return -1;
+        }
+        
+        if(bankJSON.equals("null")){
+            return -1;
+        }
+        
+        try{
+            if(!accountType.equals("CHECK") && !accountType.equals("SAVINGS")){
+                return -1;
+            }
+        } catch (Exception e) {
+            return -1;
+        }
+                
         AccountJsonSerializerImpl accJson = new AccountJsonSerializerImpl();
         Person personObject = accJson.fromJson(personJSON, Person.class);
         Bank bankObject = accJson.fromJson(bankJSON, Bank.class);
         
-        //personObject.getKey();
-        //bankObject.getKey();
-        return personObject.getKey().length();
-        //return accountEntityFacade.create(accountType, personObject.getKey(), bankObject.getKey());
+        return accountEntityFacade.create(accountType, personObject.getKey(), bankObject.getKey());
     }
     
 }

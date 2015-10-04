@@ -2,6 +2,7 @@ package se.liu.ida.tdp024.account.xfinal.test.account;
 
 import java.util.ArrayList;
 import java.util.List;
+import org.junit.After;
 import org.junit.Assert;
 import org.junit.Test;
 import se.liu.ida.tdp024.account.util.http.HTTPHelper;
@@ -11,7 +12,7 @@ import se.liu.ida.tdp024.account.xfinal.test.util.FinalConstants;
 public class AccountCreateTest {
 
     private static final HTTPHelper httpHelper = new HTTPHelperImpl();
-
+    
     @Test
     public void createSuccess() {
 

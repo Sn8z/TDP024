@@ -18,7 +18,11 @@ public class AccountService {
     @Path("/create")
     public Response createAccount(@QueryParam("accounttype") String accountType, @QueryParam("name") String name, @QueryParam("bank") String bank){
         long id = AccountLogicFacade.createAccount(accountType, name, bank);
-        return Response.ok().entity(String.valueOf(id)).build();
+        if(id > 0){
+            return Response.ok().entity("OK").build();
+        } else {
+            return Response.ok().entity("FAILED").build();
+        }
     }
     
     @GET
